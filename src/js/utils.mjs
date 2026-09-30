@@ -26,4 +26,15 @@ export async function loadHeaderFooter() {
 
   // Show the current year in the footer
   document.querySelector('#current-year').textContent = new Date().getFullYear();
+  setupMenuButton();
+}
+
+// Shows or hides the navigation when the menu button is clicked
+function setupMenuButton() {
+  const menuButton = document.querySelector('.menu-button');
+  const nav = document.querySelector('.main-nav');
+
+  menuButton.addEventListener('click', () => {
+    nav.classList.toggle('open');
+  });
 }

@@ -5,13 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Find recipes by name, ingredient or category, with nutrition information and kids friendly options.">
   <title>Your Recipes App | Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <header id="main-header"></header>
 
   <main>
-    <h1>Recipe App</h1>
+    <!-- Hero: welcome message -->
+    <section class="hero">
+      <h1>Your Recipes App</h1>
+      <p>Find easy and delicious recipes for every day.</p>
+    </section>
+
+    <!-- Recipe of the day (filled with JavaScript) -->
+    <section class="recipe-of-the-day">
+      <h2>Recipe of the Day</h2>
+      <div id="recipe-of-the-day"></div>
+    </section>
+
+    <!-- Recipe cards (filled with JavaScript) -->
+    <section class="recipes">
+      <h2>Recipes</h2>
+      <div id="recipe-list" class="recipe-grid"></div>
+    </section>
   </main>
 
   <footer id="main-footer"></footer>
