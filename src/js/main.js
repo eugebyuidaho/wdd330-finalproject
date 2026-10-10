@@ -1,7 +1,9 @@
 //Import the function that loads the header and footer
-import { loadHeaderFooter } from "./utils.mjs";
+import { loadHeaderFooter, recipeCardTemplate } from "./utils.mjs";
 //Import the class that conects to TheMealDB
 import ExternalServices from "./ExternalServices.mjs";
+//Import the function that sets up the search form
+import { setupSearch, setupCategoryFilter } from "./Search.mjs";
 
 //Load the header and the footer on the home page
 loadHeaderFooter();
@@ -9,16 +11,7 @@ loadHeaderFooter();
 // Create the connection to TheMealDB
 const services = new ExternalServices();
 
-// Returns the HTML for one recipe card
-function recipeCardTemplate(recipe) {
-  return `<article class="recipe-card">
-    <a href="/recipe/index.html?id=${recipe.idMeal}">
-      <img src="${recipe.strMealThumb}" alt="${recipe.strMeal}" loading="lazy">
-      <h3>${recipe.strMeal}</h3>
-      <p>${recipe.strCategory} · ${recipe.strArea || 'International'}</p>
-    </a>
-  </article>`;
-}
+
 
 // Gets the recipes and shows them as cards
 async function displayRecipes() {
@@ -49,3 +42,8 @@ async function displayRecipeOfTheDay() {
 }
 
 displayRecipeOfTheDay();
+
+//Activates the search form on the home page
+setupSearch();
+//Activates the category filter on the home page
+setupCategoryFilter();

@@ -23,4 +23,25 @@ export default class ExternalServices {
     const data = await convertToJson(response);
     return data.meals[0];
   }
+
+  // Searches recipes that use a specific ingredient
+  async searchByIngredient(ingredient) {
+    const response = await fetch(`${baseURL}filter.php?i=${ingredient}`);
+    const data = await convertToJson(response);
+    return data.meals;
+  }
+
+  // Gets the recipes of one category
+  async filterByCategory(category) {
+    const response = await fetch(`${baseURL}filter.php?c=${category}`);
+    const data = await convertToJson(response);
+    return data.meals;
+  }
+
+  // Gets the details of one recipe by its ID
+  async getRecipeById(id) {
+    const response = await fetch(`${baseURL}lookup.php?i=${id}`);
+    const data = await convertToJson(response);
+    return data.meals[0];
+  }
 }

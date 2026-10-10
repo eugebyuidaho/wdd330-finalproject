@@ -1,5 +1,5 @@
 import { resolve } from 'path';
-import { build, defineConfig } from 'vite';
+import { defineConfig } from 'vite';
 
 export default defineConfig({
     root: 'src/',
@@ -9,6 +9,9 @@ export default defineConfig({
         rollupOptions: {
             input: {
                 main: resolve(__dirname, 'src/index.html'),
+                recipe: resolve(__dirname, 'src/recipe/index.html'),
+                favorites: resolve(__dirname, 'src/favorites/index.html'),
+                kids: resolve(__dirname, 'src/kids/index.html'),
             },
         },
     },

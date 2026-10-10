@@ -16,6 +16,19 @@
     <section class="hero">
       <h1>Your Recipes App</h1>
       <p>Find easy and delicious recipes for every day.</p>
+      <!-- Search form: by recipe name or by ingredient -->
+      <form id="search-form" class="search-form">
+        <label for="search-type">Search by</label>
+        <select id="search-type">
+          <option value="name">Recipe name</option>
+          <option value="ingredient">Ingredient</option>
+        </select>
+
+        <label for="search-input">Search</label>
+        <input type="text" id="search-input" placeholder="e.g. chicken" required>
+
+        <button type="submit" class="button">Search</button>
+      </form>
     </section>
 
     <!-- Recipe of the day (filled with JavaScript) -->
@@ -27,6 +40,23 @@
     <!-- Recipe cards (filled with JavaScript) -->
     <section class="recipes">
       <h2>Recipes</h2>
+      <div id="category-filter" class="category-filter">
+        <label for="category-select">Filter by category:</label>
+        <select id="category-select">
+          <option value="">All</option>
+          <option value="Beef">Beef</option>
+          <option value="Chicken">Chicken</option>
+          <option value="Dessert">Dessert</option>
+          <option value="Lamb">Lamb</option>
+          <option value="Pasta">Pasta</option>
+          <option value="Pork">Pork</option>
+          <option value="Seafood">Seafood</option>
+          <option value="Side">Side</option>
+          <option value="Starter">Starter</option>
+          <option value="Vegan">Vegan</option>
+          <option value="Vegetarian">Vegetarian</option>
+        </select>
+      </div>
       <div id="recipe-list" class="recipe-grid"></div>
     </section>
   </main>

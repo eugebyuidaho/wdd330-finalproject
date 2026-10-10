@@ -38,3 +38,37 @@ function setupMenuButton() {
     nav.classList.toggle('open');
   });
 }
+
+// Returns the HTML for one recipe card
+export function recipeCardTemplate(recipe) {
+  
+  let details = '';
+  if (recipe.strCategory) {
+    details = `<p>${recipe.strCategory} · ${recipe.strArea || 'International'}</p>`;
+  }
+
+  return `<article class="recipe-card">
+    <a href="/recipe/index.html?id=${recipe.idMeal}">
+      <img src="${recipe.strMealThumb}" alt="${recipe.strMeal}" loading="lazy">
+      <h3>${recipe.strMeal}</h3>
+      ${details}
+    </a>
+  </article>`;
+}
+
+//Returns the value of a parameter from the URL
+export function getParam(param) {
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  return urlParams.get(param);
+}
+
+//Reads data from localStorage and converts it from JSON
+export function getLocalStorage(key) {
+  return JSON.parse(localStorage.getItem(key));
+}
+
+//Converts data to JSON and saves it in localStorage
+export function setLocalStorage(key, data) {
+  localStorage.setItem(key, JSON.stringify(data));
+}
